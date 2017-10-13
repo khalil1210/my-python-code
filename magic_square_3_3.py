@@ -1,11 +1,12 @@
+from itertools import permutations
+
 def main():
-    a = '123456788'
-    while a < '999999999':
-        a = str(int(a) + 1) # dont do this instead find next permuttion
+    perms = [''.join(p) for p in permutations('123456789')]
+    for a in perms:
         a = make9digitNumber(a)
         b = splitNumberToArray(a)
         if isMagicSquare(b):
-            print('magic__'+a)
+            print(a)
     print('end')
 
 def isMagicSquare(a):
